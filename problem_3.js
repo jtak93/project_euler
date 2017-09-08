@@ -26,9 +26,9 @@ for (var k = 0; k < 1000000; k ++) {
 
 
 function largestPrimeFactor(num) {
-  // find all primes to sqrt
   var currentNum = num;
   var largestPrimeFactor = null;
+  // iterate through primes array and divide from the current if it is a factor
   var primeIndex = 0;
   while (currentNum > 1) {
     if( currentNum % primes[primeIndex] === 0) {
