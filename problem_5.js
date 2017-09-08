@@ -32,12 +32,12 @@ var primes = []
 for (var i = 2; i < 20; i++) {
   if (isPrime(i)) primes.push(i)
 }
-function smallestDivisibleBy1To20() {
+function smallestDivisibleByXToY(x,y) {
   var answer = 1;
   var mostPrimeCounters = {
   }
   //loop through 11-20 for prime factorizations
-  for (var i = 11; i < 21; i++) {
+  for (var i = x; i < y+1; i++) {
     var primeFactors = [];
     var num = i;
     var j = 2
@@ -57,17 +57,17 @@ function smallestDivisibleBy1To20() {
       if (!counters[key]) counters[key] = 1
       else counters[key]++
     }
-    // loop through prim factoriation to check if more than current
+    // loop through prime factorization to check if more than current
     for (var k in counters) {
       if (!mostPrimeCounters[k]) mostPrimeCounters[k] = 1
       else if (counters[k] > mostPrimeCounters[k]) mostPrimeCounters[k] = counters[k]
     }
-
   }
+
   for (var key in mostPrimeCounters) {
     answer = answer * Math.pow(key, mostPrimeCounters[key])
   }
   return answer;
 }
 
-console.log('answer:', smallestDivisibleBy1To20())
+console.log('answer:', smallestDivisibleByXToY(1,20))
