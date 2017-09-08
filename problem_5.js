@@ -21,17 +21,6 @@ What is the smallest positive number that is evenly divisible by all of the numb
   (2*2*2*2*3*3*5*7*11*13*17*19)
 */
 
-function isPrime(n) {
-  for(var i = 2; i < Math.sqrt(n); i++) {
-    if (n % i === 0) return false
-  }
-  return true;
-}
-
-var primes = []
-for (var i = 2; i < 20; i++) {
-  if (isPrime(i)) primes.push(i)
-}
 function smallestDivisibleByXToY(x,y) {
   var answer = 1;
   var mostPrimeCounters = {
