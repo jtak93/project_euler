@@ -14,7 +14,10 @@ What is the largest prime factor of the number 600851475143 ?
 
 // generate list of primes
 function isPrime(n) {
-  for(var i = 2; i < Math.sqrt(n); i++) {
+  if (n === 0 || n === 1) return false
+  if (n === 2) return true
+  if (n === 3) return true
+  for(var i = 2; i <= Math.sqrt(n); i++) {
     if (n % i === 0) return false
   }
   return true;
